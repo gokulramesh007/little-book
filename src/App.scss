@@ -1,0 +1,15 @@
+* {
+  box-sizing: border-box;
+}
+html body {
+  font-family: 'Open Sans', sans-serif;
+  margin: 0;
+}
+.hide {
+  display: none;
+}
+body {
+  &.fixed {
+    overflow: hidden;
+  }
+}
