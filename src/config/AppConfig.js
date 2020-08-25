@@ -1,6 +1,6 @@
 const APP_CONFIG = {
   DEV: {
-    ROOT_URL: "http://nijinserver.herokuapp.com/dummy/cineflex"
+    ROOT_URL: "https://jsonmockserver.vercel.app"
   },
   TEST: {
     ROOT_URL: ""
