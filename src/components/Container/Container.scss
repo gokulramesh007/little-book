@@ -1,0 +1,63 @@
+@import "../../constants/_variables.scss";
+
+.littleBooksContainer {
+  height: 100%;
+  &.light{
+    background-color: $white;
+  }
+  &.dark{
+    background-color: $black;
+  }
+  &.light-primary{
+    background-color: $white;
+  }
+  &.light-secondary{
+    background-color: $theme-bg-light-secondary;
+  }
+  &.dark-primary{
+    background-color: $theme-bg-dark-primary;
+  }
+  &.dark-secondary{
+    background-color: $theme-bg-dark-secondary;
+  }
+  &.large {
+    width: 100%;
+  }
+  &.medium {
+    width: 75%;
+  }
+  &.small {
+    width: 50%;
+  }
+  &.tiny {
+    width: 25%;
+  }
+  &.largePadding {
+    padding: 200px;
+  }
+  &.mediumPadding {
+    padding: 100px;
+  }
+  &.smallPadding {
+    padding: 50px;
+  }
+  &.tinyPadding {
+    padding: 30px;
+  }
+}
+@media only screen and (max-width: 1024px) {
+  .littleBooksContainer {
+    &.largePadding {
+      padding: 25px;
+    }
+    &.mediumPadding {
+      padding: 15px;
+    }
+    &.smallPadding {
+      padding: 10px;
+    }
+    &.tinyPadding {
+      padding: 5px;
+    }
+  }
+}

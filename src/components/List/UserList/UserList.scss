@@ -1,0 +1,137 @@
+@import "../../../constants/_variables.scss";
+
+/* List CSS - START */
+.user-list-wrapper {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  .tiles {
+    border-radius: 10px;
+    &.light {
+      background-color: $white;
+      color: $black;
+    }
+    &.dark {
+      background-color: $black;
+      color: $white;
+    }
+  }
+  &.one {
+    .tiles {
+      width: 100%;
+      margin-bottom: 5%;
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+  &.two {
+    .tiles {
+      width: 48%;
+      margin-bottom: 5%;
+      &:not(:nth-child(2n)) {
+        margin-right: 4%;
+      }
+    }
+  }
+  &.three {
+    .tiles {
+      width: 30%;
+      margin-bottom: 5%;
+      &:not(:nth-child(3n)) {
+        margin-right: 5%;
+      }
+    }
+  }
+  &.four {
+    .tiles {
+      width: 23.5%;
+      margin-bottom: 2%;
+      &:not(:nth-child(4n)) {
+        margin-right: 2%;
+      }
+    }
+  }
+  .no-users-wrapper {
+    width: 100%;
+    text-align: center;
+    &.light {
+      color: $black;
+    }
+    &.dark {
+      color: $white;
+    }
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  .user-list-wrapper {
+    &.three {
+      .tiles {
+        width: 48%;
+        &:not(:nth-child(3n)) {
+          margin-right: 0;
+        }
+        &:not(:nth-child(2n)) {
+          margin-right: 4%;
+        }
+      }
+    }
+    &.four {
+      .tiles {
+        width: 48%;
+        margin-bottom: 4%;
+        &:not(:nth-child(4n)) {
+          margin-right: 0;
+        }
+        &:not(:nth-child(2n)) {
+          margin-right: 4%;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .user-list-wrapper {
+    &.three {
+      .tiles {
+        width: 100%;
+        &:not(:nth-child(3n)) {
+          margin-right: 0;
+        }
+        &:not(:nth-child(2n)) {
+          margin-right: 0%;
+        }
+      }
+    }
+    &.four {
+      .tiles {
+        width: 100%;
+        margin-bottom: 4%;
+        &:not(:nth-child(4n)) {
+          margin-right: 0;
+        }
+        &:not(:nth-child(2n)) {
+          margin-right: 0%;
+        }
+      }
+    }
+  }
+}
+@media only screen and (max-width: 300px) {
+  .user-list-wrapper {
+    &.two {
+      .tiles {
+        width: 100%;
+        &:not(:nth-child(3n)) {
+          margin-right: 0;
+        }
+        &:not(:nth-child(2n)) {
+          margin-right: 0%;
+        }
+      }
+    }
+  }
+}
+/* List CSS - END */

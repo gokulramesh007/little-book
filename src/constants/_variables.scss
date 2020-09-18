@@ -1,0 +1,50 @@
+$mobile-width: 990px;
+
+// @mixin mobile {
+//   @media only screen and (max-width: #{$mobile-width}) {
+//     @content;
+//   }
+// }
+
+/* Color Variables Declaration - START */
+
+$white: #fff;
+$black: #000;
+$theme-bg-light-primary: $white;
+$theme-bg-light-secondary: #f5f6fa;
+$theme-bg-dark-primary: #031e2f;
+$theme-bg-dark-secondary: $black;
+$theme-dark-blue: #052c46;
+$button-primary: #b354b7;
+$button-primary-glow: #cf61d4;
+$loader-overlay: rgba(0, 0, 0, 0.2);
+$theme-cyan: #97e2f4;
+$theme-cyan-glow: #b4effd;
+$theme-grey: #b6b7bc;
+$theme-silver: #e6e5e5;
+
+/* Color Variables Declaration - END */
+
+/* Font Variables Declaration - START */
+
+$extraLarge: 70px;
+$h1: 50px;
+$h2: 45px;
+$h3: 35px;
+$h4: 28px;
+$large: 23px;
+$h5: 20px;
+$h6: 19px;
+$input: 18px;
+$regular17: 17px;
+$regular: 16px;
+$regular15: 15px;
+$medium: 14px;
+$smallMedium: 13px;
+$small: 12px;
+$smaller: 10px;
+$tiny: 8px;
+$minute: 6px;
+$space_large: 7px;
+
+/* Font Variables Declaration - END */

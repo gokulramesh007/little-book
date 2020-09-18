@@ -1,0 +1,30 @@
+@import "../../constants/_variables.scss";
+
+.overlay-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 3;
+  cursor: pointer;
+  .overlay-content {
+    position: absolute;
+    right: 0;
+    width: 35%;
+    height: 100%;
+    z-index: 5;
+    cursor: auto;
+  }
+  &.light {
+    color: $black;
+    background: rgba(0, 0, 0, 0.7);
+  }
+  &.dark {
+    color: $white;
+    background: rgba(3, 30, 47, 0.5);
+  }
+  .littleBooksContainer{
+    overflow-y: scroll;
+  }
+}

@@ -1,0 +1,48 @@
+@import "../../../constants/_variables.scss";
+
+.details-wrapper {
+  .littleBooksContainer {
+    overflow-y: scroll;
+  }
+  .blog-image-wrapper {
+    height: 420px;
+    img {
+      height: 100%;
+      border-radius: 15px;
+    }
+  }
+  .title {
+    margin: 20px 0;
+    font-size: $h3;
+    font-weight: bold;
+  }
+  .description {
+    font-size: $regular15;
+    line-height: 1.75;
+  }
+  &.light {
+    color: $black;
+  }
+  &.dark {
+    color: $white;
+  }
+  .button-wrapper {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 20px;
+    .action-wrapper {
+      width: 100%;
+      display: flex;
+      justify-content: flex-end;
+      button:first-child {
+        margin-right: 10px;
+      }
+    }
+  }
+  .no-details-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+}

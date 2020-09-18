@@ -1,0 +1,46 @@
+@import "../../../constants/_variables.scss";
+
+.blog-card-wrapper {
+  padding: 25px;
+  border-radius: 10px;
+  &.light {
+    &.selected {
+      background-color: $theme-cyan;
+    }
+    background-color: $theme-bg-light-primary;
+    color: $black;
+  }
+  &.dark {
+    &.selected {
+      background-color: $theme-bg-dark-primary;
+    }
+    background-color: $theme-dark-blue;
+    color: $white;
+  }
+  .title {
+    font-size: $regular17;
+    font-weight: bold;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+  .type {
+    font-size: $smallMedium;
+    color: $button-primary;
+    margin: 10px 0;
+  }
+  .details {
+    font-size: $medium;
+    display: block;
+    display: -webkit-box;
+    height: 60px;
+    line-height: 1.4;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  &:hover {
+    cursor: pointer;
+  }
+}
