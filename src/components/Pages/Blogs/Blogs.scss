@@ -1,0 +1,16 @@
+@import "../../../constants/_variables.scss";
+
+.blogs-wrapper {
+  .littleBooksContainer {
+    overflow-y: scroll;
+  }
+  .search-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+    .search-input-wrapper {
+      width: 68%;
+    }
+  }
+}

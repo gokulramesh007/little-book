@@ -9,16 +9,19 @@ $mobile-width: 990px;
 /* Color Variables Declaration - START */
 
 $white: #fff;
-$black: #444;
-$theme-pink: #f14c58;
-$theme-bg-one: #8fbdbf;
-$theme-bg-two: #457b9d;
-$theme-bg-three: #1d3557;
-$button-primary: #1d3557;
-$button-primary-glow: #39629c;
-$button-secondary: #f14c58;
-$button-secondary-glow: #fd5865;
-$loader-overlay: rgba(246, 246, 246, 0.5);
+$black: #000;
+$theme-bg-light-primary: $white;
+$theme-bg-light-secondary: #f5f6fa;
+$theme-bg-dark-primary: #031e2f;
+$theme-bg-dark-secondary: $black;
+$theme-dark-blue: #052c46;
+$button-primary: #b354b7;
+$button-primary-glow: #cf61d4;
+$loader-overlay: rgba(0, 0, 0, 0.2);
+$theme-cyan: #97e2f4;
+$theme-cyan-glow: #b4effd;
+$theme-grey: #b6b7bc;
+$theme-silver: #e6e5e5;
 
 /* Color Variables Declaration - END */
 
