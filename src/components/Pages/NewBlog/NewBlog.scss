@@ -1,0 +1,67 @@
+@import "../../../constants/_variables.scss";
+
+.new-blog-wrapper {
+  height: 100%;
+  .title {
+    font-size: $input;
+    font-weight: bold;
+    margin: 25px 0;
+  }
+  .details {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: calc(100% - 54px);
+    input {
+      border: 0;
+      &.light {
+        background-color: $white;
+        color: $black;
+        &::placeholder,
+        &:-ms-input-placeholder,
+        &::-ms-input-placeholder {
+          color: $black;
+        }
+      }
+      &.dark {
+        background-color: $black;
+        color: $white;
+        &::placeholder,
+        &:-ms-input-placeholder,
+        &::-ms-input-placeholder {
+          color: $white;
+        }
+      }
+      &:focus {
+        outline: none;
+      }
+    }
+    .title {
+      width: 100%;
+      margin: 0 0 20px 0;
+      font-size: $h3;
+    }
+    .description {
+      width: 100%;
+      font-size: $regular15;
+      border: 0;
+      font-family: 'Roboto Slab', serif;
+      resize: none;
+      margin-bottom: 20px;
+      &.light {
+        background-color: $white;
+        color: $black;
+      }
+      &.dark {
+        background-color: $black;
+        color: $white;
+      }
+      &:focus {
+        outline: none;
+      }
+    }
+    button {
+      align-self: flex-end;
+    }
+  }
+}

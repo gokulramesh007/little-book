@@ -1,0 +1,16 @@
+@import "../../constants/_variables.scss";
+
+.homescreenWrapper {
+  display: flex;
+  height: 100vh;
+  max-height: 100vh;
+  .menu-wrapper {
+    width: 17%;
+  }
+  .blogs-wrapper {
+    width: 33%;
+  }
+  .details-wrapper {
+    width: 50%;
+  }
+}

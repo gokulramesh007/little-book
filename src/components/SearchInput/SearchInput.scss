@@ -1,0 +1,43 @@
+@import "../../constants/_variables.scss";
+
+.search-input-wrapper {
+  .search-field {
+    width: 100%;
+    padding: 15px;
+    border-radius: 30px;
+    border: 0;
+    &.light {
+      background-color: $white;
+      color: $black;
+      &::placeholder {
+        color: $theme-grey;
+      }
+      /* Internet Explorer 10-11 */
+      &:-ms-input-placeholder {
+        color: $theme-grey;
+      }
+      /* Microsoft Edge */
+      &::-ms-input-placeholder {
+        color: $theme-grey;
+      }
+    }
+    &.dark {
+      background-color: $theme-bg-dark-primary;
+      color: $white;
+      &::placeholder {
+        color: #5b6d78;
+      }
+      /* Internet Explorer 10-11 */
+      &:-ms-input-placeholder {
+        color: #5b6d78;
+      }
+      /* Microsoft Edge */
+      &::-ms-input-placeholder {
+        color: #5b6d78;
+      }
+    }
+    &:focus {
+      outline: none;
+    }
+  }
+}

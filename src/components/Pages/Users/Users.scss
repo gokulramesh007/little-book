@@ -1,0 +1,9 @@
+@import "../../../constants/_variables.scss";
+
+.users-wrapper {
+  .title {
+    font-size: $input;
+    font-weight: bold;
+    margin: 15px 0;
+  }
+}

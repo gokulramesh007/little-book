@@ -1,0 +1,50 @@
+@import "../../../constants/_variables.scss";
+
+.menu-wrapper {
+  .menu-contents {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    .logo {
+      text-align: center;
+      span {
+        font-size: $h4;
+      }
+      span:first-child {
+        margin-right: 5px;
+      }
+      &.light {
+        span {
+          color: $black;
+        }
+        span:first-child {
+          color: $button-primary;
+        }
+      }
+      &.dark {
+        span {
+          color: $white;
+        }
+        span:first-child {
+          color: $white;
+        }
+      }
+    }
+    .action-wrapper {
+      .action {
+        font-size: $small;
+        margin-bottom: 5px;
+        &:hover {
+          cursor: pointer;
+        }
+      }
+      &.light {
+        color: $black;
+      }
+      &.dark {
+        color: $white;
+      }
+    }
+  }
+}

@@ -1,0 +1,59 @@
+/* Button CSS - START */
+
+@import "../../constants/_variables.scss";
+
+.button {
+  padding: 5px 10px;
+  font-family: 'IBM Plex Sans', sans-serif;
+  border-radius: 30px;
+  cursor: pointer;
+  &.pink {
+    background-color: $button-primary;
+    border: 1px solid $button-primary;
+    color: $white;
+    &:hover {
+      background-color: $button-primary-glow;
+      border: 1px solid $button-primary-glow;
+    }
+  }
+  &.cyan {
+    background-color: $theme-cyan;
+    border: 1px solid $theme-cyan;
+    color: $black;
+    &:hover {
+      background-color: $theme-cyan-glow;
+      border: 1px solid $theme-cyan-glow;
+    }
+  }
+  &.large {
+    width: 100%;
+  }
+  &.medium {
+    width: 50%;
+  }
+  &.small {
+    width: 35%;
+  }
+  &.tiny {
+    width: 20%;
+    padding: 14px 20px;
+  }
+  &.custom {
+    width: 30%;
+    padding: 14px 20px;
+  }
+  &:focus {
+    outline: none;
+  }
+}
+@media only screen and (max-width: 900px) {
+  .button {
+    &.medium {
+      width: 100%;
+    }
+    &.small {
+      width: 100%;
+    }
+  }
+}
+/* Button CSS - END */

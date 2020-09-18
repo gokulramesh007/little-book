@@ -1,0 +1,28 @@
+@import "../../constants/_variables.scss";
+
+.filter-wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  .title {
+    &.light {
+      color: $black;
+    }
+    &.dark {
+      color: $white;
+    }
+  }
+  .filters {
+    margin: 10px 0;
+    &.light {
+      .checkbox {
+        color: $black;
+      }
+    }
+    &.dark {
+      .checkbox {
+        color: $white;
+      }
+    }
+  }
+}

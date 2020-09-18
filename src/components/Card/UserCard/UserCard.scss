@@ -1,0 +1,21 @@
+@import "../../../constants/_variables.scss";
+
+.users-wrapper {
+  font-family: 'Open Sans', sans-serif;
+  .user-card-wrapper {
+    .image-wrapper {
+      img {
+        border-radius: 10px 10px 10px 0;
+      }
+    }
+    .title {
+      margin: 2px 0;
+      font-size: $medium;
+      color: $button-primary;
+    }
+    .city {
+      font-size: $small;
+      font-weight: 600;
+    }
+  }
+}
