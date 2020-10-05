@@ -1,4 +1,4 @@
-import React from "react";
+import React, { FC, memo } from "react";
 import { Image } from "../../../components";
 import { Strings } from "../../../constants";
 import "./UserCard.scss";
@@ -13,7 +13,7 @@ const defaultProps: UserCardInterface = {
   theme: "light"
 };
 
-const UserCard: React.FC<UserCardInterface> = ({
+const UserCard: FC<UserCardInterface> = ({
   data,
   theme
 }: UserCardInterface) => {
@@ -37,4 +37,4 @@ const UserCard: React.FC<UserCardInterface> = ({
 
 UserCard.defaultProps = defaultProps;
 
-export default React.memo(UserCard);
+export default memo(UserCard);
