@@ -1,29 +1,34 @@
-import React, { useEffect, useRef } from "react";
+import React, { lazy, Suspense, useRef } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { fetchBlogs, fetchUsers, updateFilter } from "../../../redux";
+import {
+  fetchBlogs,
+  fetchUsers,
+  toggleOverlay,
+  updateFilter
+} from "../../../redux";
 import { Container, Filter, Loader } from "../../../components";
-import { userService } from "../../../services";
 import "./Menu.scss";
 
 interface MenuInterface {
   theme: string;
   changeTheme: any;
-  viewUsers: any;
 }
 
 const defaultProps: MenuInterface = {
   theme: "light",
-  changeTheme: () => console.log("changeTheme clicked"),
-  viewUsers: () => console.log("viewUsers clicked")
+  changeTheme: () => console.log("changeTheme clicked")
 };
+
+const Users = lazy(() => import("../Users/Users"));
 
 const Menu: React.FC<MenuInterface> = ({
   theme,
-  changeTheme,
-  viewUsers
+  changeTheme
 }: MenuInterface) => {
   const containerTheme = theme === "light" ? "light-primary" : "dark-primary";
-  const blogState = useSelector((state: any) => state.blog);
+  const state = useSelector((state: any) => state);
+  const overlay = state.overlay.showOverlay;
+  const blogState = state.blog;
   const initialFilters = blogState.initialFilters;
   const blogs = blogState.blogs;
   const filter = blogState.filter;
@@ -33,18 +38,6 @@ const Menu: React.FC<MenuInterface> = ({
 
   const handleTheme = () => {
     changeTheme();
-  };
-
-  const _fetchUsers = () => {
-    userService
-      .getUsers()
-      .then(response => {
-        //console.log("Users -> response : ", response);
-        dispatch(fetchUsers(response));
-      })
-      .catch(error => {
-        console.error(error.message);
-      });
   };
 
   const handleFilter = (filters: Array<any>) => {
@@ -82,9 +75,10 @@ const Menu: React.FC<MenuInterface> = ({
     if (loader.current) loader.current.classList.add("hide");
   };
 
-  useEffect(() => {
-    _fetchUsers();
-  }, []);
+  const viewUsers = () => {
+    dispatch(toggleOverlay({ ...overlay, users: !overlay.users }));
+    dispatch(fetchUsers());
+  };
 
   return (
     <div className="menu-wrapper">
@@ -97,10 +91,11 @@ const Menu: React.FC<MenuInterface> = ({
           <Filter
             data={initialFilters}
             theme={theme}
+            filter={filter.filters}
             handleFilter={handleFilter}
           />
           <div className={`action-wrapper ${theme}`}>
-            <div className="action" onClick={() => viewUsers()}>
+            <div className="action" onClick={viewUsers}>
               View Members
             </div>
             <div className="action" onClick={handleTheme}>
@@ -109,6 +104,9 @@ const Menu: React.FC<MenuInterface> = ({
           </div>
         </div>
       </Container>
+      <Suspense fallback={<Loader />}>
+        {overlay.users && Users ? <Users theme={theme} /> : null}
+      </Suspense>
       <div ref={loader} className="loader-container hide">
         <Loader />
       </div>

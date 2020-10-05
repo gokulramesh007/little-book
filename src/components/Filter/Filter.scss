@@ -15,12 +15,12 @@
   .filters {
     margin: 10px 0;
     &.light {
-      .checkbox {
+      .checkbox-container {
         color: $black;
       }
     }
     &.dark {
-      .checkbox {
+      .checkbox-container {
         color: $white;
       }
     }

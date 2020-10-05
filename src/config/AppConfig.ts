@@ -1,7 +1,6 @@
 const APP_CONFIG = {
   DEV: {
-    //ROOT_URL: "https://cors-anywhere.herokuapp.com/https://jsonmockserver.vercel.app"
-    ROOT_URL: "https://run.mocky.io"
+    ROOT_URL: "https://jsonmockserver.vercel.app"
   },
   TEST: {
     ROOT_URL: ""

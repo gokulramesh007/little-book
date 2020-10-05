@@ -25,6 +25,11 @@ module.exports = {
   },
   plugins: ["react", "@typescript-eslint", "import", "prettier"],
   rules: {
+    "no-use-before-define": "off",
+    "@typescript-eslint/no-use-before-define": [
+      "error",
+      { functions: false, classes: false, variables: false }
+    ],
     "no-unused-vars": "off",
     "@typescript-eslint/no-unused-vars": "error",
     "prettier/prettier": "error",
@@ -50,7 +55,9 @@ module.exports = {
           caseInsensitive: true
         }
       }
-    ]
+    ],
+    semi: "off",
+    "@typescript-eslint/semi": "error"
   },
   settings: {
     react: {
