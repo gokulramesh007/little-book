@@ -5,22 +5,29 @@ import {
   Button,
   Container,
   Loader,
+  NewBlog,
   SearchInput
 } from "../../../components";
-import { fetchBlogs, updateFilter, setInitialFilters } from "../../../redux";
+import {
+  fetchBlogs,
+  updateFilter,
+  setInitialFilters,
+  toggleOverlay
+} from "../../../redux";
 import { blogService } from "../../../services";
 import "./Blogs.scss";
 
 interface BlogInterface {
   theme: string;
-  addBlog: any;
 }
 
-const Blogs: React.FC<BlogInterface> = ({ theme, addBlog }: BlogInterface) => {
+const Blogs: React.FC<BlogInterface> = ({ theme }: BlogInterface) => {
   const containerTheme =
     theme === "light" ? "light-secondary" : "dark-secondary";
 
-  const blogState = useSelector((state: any) => state.blog);
+  const state = useSelector((state: any) => state);
+  const overlay = state.overlay.showOverlay;
+  const blogState = state.blog;
   const blogs = blogState.blogs;
   const filter = blogState.filter;
   const dispatch = useDispatch();
@@ -62,14 +69,19 @@ const Blogs: React.FC<BlogInterface> = ({ theme, addBlog }: BlogInterface) => {
 
   const handleSearch = (value: string) => {
     let blogList = [];
-
-    blogList =
-      filter.filters.length > 0 ? blogs.filteredData : blogs.initialData;
-
-    let searchResults = blogList.filter((blog: any) => {
-      let title = blog.title.toUpperCase();
-      return title.includes(value.toUpperCase());
-    });
+    let searchResults = [];
+    let filters = filter.filters;
+    blogList = filters.length > 0 ? blogs.filteredData : blogs.initialData;
+    if (value === "") {
+      searchResults = blogs.initialData.filter((blog: any) => {
+        return filters.includes(blog.type);
+      });
+    } else {
+      searchResults = blogList.filter((blog: any) => {
+        let title = blog.title.toUpperCase();
+        return title.includes(value.toUpperCase());
+      });
+    }
 
     let selectedBlog = searchResults.length > 0 ? searchResults[0] : {};
 
@@ -91,12 +103,16 @@ const Blogs: React.FC<BlogInterface> = ({ theme, addBlog }: BlogInterface) => {
     );
   };
 
+  const addBlog = () => {
+    dispatch(toggleOverlay({ ...overlay, newBlog: !overlay.newBlog }));
+  };
+
   useEffect(() => {
     _fetchBlogs();
   }, []);
 
   return (
-    <div className="blogs-wrapper">
+    <div data-testid="blogs" className="blogs-wrapper">
       <Container theme={containerTheme}>
         <div className="search-section">
           <SearchInput theme={theme} onSearch={handleSearch} />
@@ -104,6 +120,7 @@ const Blogs: React.FC<BlogInterface> = ({ theme, addBlog }: BlogInterface) => {
         </div>
         <BlogList data={blogs.filteredData} theme={theme} />
       </Container>
+      {overlay.newBlog ? <NewBlog theme={theme} /> : null}
       <div ref={loader} className="loader-container hide">
         <Loader />
       </div>

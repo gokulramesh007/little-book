@@ -23,7 +23,7 @@ const Users: React.FC<UsersInterface> = ({ theme }: UsersInterface) => {
 
   return (
     <Overlay theme={theme} closeOverlay={handleOverlayClick}>
-      <div className="users-wrapper">
+      <div data-testid="users" className="users-wrapper">
         <div className="title">Members</div>
         <UserList data={users} theme={theme} />
       </div>

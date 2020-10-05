@@ -6,21 +6,23 @@ import "./Filter.scss";
 interface FilterInterface {
   data: any;
   theme?: string;
+  filter?: any,
   handleFilter: any;
 }
 
 const defaultProps: FilterInterface = {
   data: [],
   theme: "light",
+  filter: [],
   handleFilter: () => console.log("handleFilter clicked!")
 };
 
 const Filter: React.FC<FilterInterface> = ({
   data,
   theme,
+  filter,
   handleFilter
 }: FilterInterface) => {
-  const filter = useSelector((state: any) => state.blog.filter.filters);
   const handleClick = (value: any) => {
     let newFilter = [];
     if (filter.includes(value)) {
